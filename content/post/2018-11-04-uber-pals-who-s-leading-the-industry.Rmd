@@ -23,7 +23,7 @@ library(Hmisc)
 The objective of this report is to use our open data portal to look at which companies in the taxi for-hire vehicle sector output the most volume of trips over time; by understanding the "top players" in the industry we can establish our reasoning behind the publishing of selective indicators referencing these companies. We leverage the FHV Base Aggregate report on Open Data; below is a sample of what the first 100 rows of that data looks like:
 
 
-```{r pulling_data, echo = F, message=F, fig.width=12, fig.height=5}
+```{r pulling_data, echo = F, message=F}
 #trips from Open data---------------------
 df = fread("https://data.cityofnewyork.us/api/views/2v9c-2k7f/rows.csv?accessType=DOWNLOAD")
 titlez = c( "base_license_number" ,   "wave_number",   "base_name"
@@ -41,7 +41,7 @@ As we can see above the data is represented in a weekly format as trips per base
 
 As with any industry it is always important to understand the overall numbers over time to see what activity looks like. Below we aggregate trips on a week and year level to see overall volume from the for-hire sector:
 
-```{r overall, echo = F, message=F, fig.width=12, warning=F}
+```{r overall, echo = F, message=F, warning=F}
 total_volume = df[, .(trips =sum(total_dispatched_trips))
    ,by = .(years, week_number)]
 caption = "*Week numbers denote weeks as submitted by TLC in the aggregate report"
@@ -74,7 +74,7 @@ Weekly trends above show a massive increase in for-hire vehicle activity, no dou
 
 How does this increase compare against yellow (MED) and infamous green taxis (SHL)? There is no sure fire way to aggregate at the month level using the weekly report as there is overlap week to week, but surely we can try and output a basic comparison using the weekly numbers and the tlc indicators provided at http://www.nyc.gov/html/tlc/html/technology/aggregated_data.shtml. Below we show the comparison, totaling fhv numbers to show average trips per day each month: 
 
-```{r, compare_yellow, echo = F, message=F, fig.width=12, warning=F}
+```{r, compare_yellow, echo = F, message=F}
 yellow = fread("http://www.nyc.gov/html/tlc/downloads/csv/data_reports_monthly_indicators_yellow.csv")
 green = fread("http://www.nyc.gov/html/tlc/downloads/csv/data_reports_monthly_indicators_shl.csv")
 #filter and clean bind
@@ -160,7 +160,7 @@ Amazingly we can see that FHV numbers have surpassed medallions already and cont
 
 Now that we have looked at the overall industry we can delve into the FHV numbers; below we aggregate on the weekly and company level for each year to see how many trips each company outputs:
 
-```{r extracting top players, echo=F, message=F, fig.width=12, warning=F}
+```{r extracting top players, echo=F, message=F, warning=F}
 #mark apps-------------------------------
 df[,company:=ifelse(
                   (substr(company, 1, 4) == "UBER" |
@@ -203,7 +203,7 @@ ggplot(top_10, aes(week_number, trips, group = company, color = company))+
 
 The chart above shows the massive growth of companies likle UBER and LYFT which now dominate the industry. The most startling take away from this graph is the vast difference in volume between UBER and everyone else. And yet we don't know how many vehicles are making these trips; is UBER leveraging an increasing supply? We can look at unique dispatched vehicles to see how many vehicles are making trips for each company: 
 
-```{r, echo=F, message=F, fig.width=12, warning=F}
+```{r, echo=F, message=F, warning=F}
 ggplot(top_10, aes(week_number, vehicles, group = company, color = company))+
   geom_line(size = 1) +
   facet_wrap(~years, nrow = 1) +
