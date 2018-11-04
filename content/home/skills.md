@@ -34,10 +34,10 @@ weight = 7
   description = "60%"
   
 [[feature]]
-  icon = "chart-line"
-  icon_pack = "fas"
-  name = "Statistics"
-  description = "100%"  
+  icon = "database"
+  icon_pack = "fab"
+  name = "SQL"
+  description = "80%"  
   
 [[feature]]
   icon = "camera-retro"
