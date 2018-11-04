@@ -1,12 +1,10 @@
 ---
-title: 'Uber & Pals: Who's Leading the Industry?'
+title: 'Uber & Pals: Who''s Leading the Industry?'
 author: Fausto Lopez
 date: '2018-11-04'
 slug: uber-pals-who-s-leading-the-industry
 categories: []
-tags:
-  - taxi
-  - transportation
+tags: []
 ---
 
 
@@ -231,3 +229,4 @@ It seems that vehicle counts are mirroring trips, at least as far as this report
 #Conclusions
 
 The above report quickly uses public data sources to legitimize the dissemination of selected company statistics. Should we decide to proceed in publishing certain industry indicators beyond MED and SHLs, we should look to use the above report to demonstrate our logic and express transparency. An argument could also be made to omit all non-app companies as the APP companies still generally command the highest volume in the industry.
+
