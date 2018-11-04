@@ -1,5 +1,5 @@
 ---
-title: 'Uber & Pals: Who''''s Leading the Industry?'
+title: 'Uber & Pals: Who''s Leading the Industry?'
 author: Fausto Lopez
 date: '2018-11-04'
 slug: uber-pals-who-s-leading-the-industry
