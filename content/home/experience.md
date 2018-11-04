@@ -29,8 +29,10 @@ date_format = "January 2006"
   Responsibilities include:
   
   * Rapid prototype innovative analytical and data storage methodologies on over 300 GB of data to run parallel computing methods
-  * Modelling
-  * Deploying
+  * Spearhead driver income study, a $100,000 budget partnership project with the New School to study driver income across New York City Taxi services
+  * Design and automate analytical processes to produce internal and public facing metrics on millions of taxi trip records, creating Shiny/Tableau dashboards and tracking KPIs
+  *Manage 3 person policy analytics team working directly under the Assistant Commissioner of Data and Technology to drive implementation of advanced analytics and make data driven decisions
+
   """
 
 [[experience]]
