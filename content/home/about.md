@@ -10,29 +10,29 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Big Data Mining",
+    "Computer Vision",
+    "Drones"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "Masters in Science Applied Research"
+  institution = "Hunter College at Macaulay Honors City University of New York"
+  year = 2014
 
 [[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2009
+  course = "Bachelors in Sociology"
+  institution = "Hunter College at Macaulay Honors City University of New York"
+  year = 2013
 
-[[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
+#[[education.courses]]
+#  course = "BSc in Artificial Intelligence"
+#  institution = "Massachusetts Institute of Technology"
+#  year = 2008
  
 +++
 
 # Biography
 
-This is my site, a place where I publish my work & fun projects. I am the Analytics & Automation Engineer at the Txi & Limousine Commission for the City of New York. It is my job to build out metrics, conduct research on policy, streamline and automate data pipelines & overall explore the data world of the Taxi Industry. 
+This is my site, a place where I publish my work & fun projects. I am the Analytics & Automation Engineer at the Taxi & Limousine Commission for the City of New York. It is my job to build out metrics, conduct research on policy, streamline and automate data pipelines & overall explore the data world of the Taxi Industry. 
