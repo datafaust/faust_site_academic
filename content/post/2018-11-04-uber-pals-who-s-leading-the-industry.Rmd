@@ -10,12 +10,14 @@ tags: []
 
 ```{r setup, echo = T, include=FALSE}
 #libraries and data-----------
+library(shiny)
 library(data.table)
 library(plotly)
 library(ggplot2)
 library(scales)
 library(zoo)
 library(Hmisc)
+library(DT)
 ```
 
 #What does our data look like?
@@ -32,7 +34,7 @@ titlez = c( "base_license_number" ,   "wave_number",   "base_name"
             ,"unique_dispatched_vehicle"   )
 names(df) = titlez
 df$company[df$company == ""] = NA
-DT::datatable(df[1:100])
+datatable(df[1:100])
 ```
 
 As we can see above the data is represented in a weekly format as trips per base per company and is grouped by "wave_number". We can unpack this a bit in order to understand what each variable means. The "base_license_number" denotes a base associated with a company which is reflected in the "company" (a company may have more than one base, UBER for instance has over 20 bases). "Wave_number" is associated with a base's size which in prior years was relevant in separating bases; for our purposes we will not look at "wave_number" as it is not pertinent to this analysis. 
@@ -203,7 +205,7 @@ ggplot(top_10, aes(week_number, trips, group = company, color = company))+
 
 The chart above shows the massive growth of companies likle UBER and LYFT which now dominate the industry. The most startling take away from this graph is the vast difference in volume between UBER and everyone else. And yet we don't know how many vehicles are making these trips; is UBER leveraging an increasing supply? We can look at unique dispatched vehicles to see how many vehicles are making trips for each company: 
 
-```{r, echo=F, message=F, warning=F}
+```{r, echo=F, message=F, warning=F, fig.width=10}
 ggplot(top_10, aes(week_number, vehicles, group = company, color = company))+
   geom_line(size = 1) +
   facet_wrap(~years, nrow = 1) +
